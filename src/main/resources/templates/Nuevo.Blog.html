@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Blog</title>
+</head>
+<body>
+    <h2>Crear Nuevo Blog</h2>
+
+    <form action="#" th:action="@{/blogs/guardar}" method="post">
+        <label for="titulo">Título del Blog:</label>
+        <input type="text" id="titulo" name="tituloBlog" required>
+        <br>
+        
+        <label for="categoria">Categoría del Blog:</label>
+        <input type="text" id="categoria" name="categoriaBlog" required>
+        <br>
+        
+        <button type="submit">Guardar Blog</button>
+    </form>
+
+    <a th:href="@{/blogs}">Volver a la Lista</a>
+</body>
+</html>

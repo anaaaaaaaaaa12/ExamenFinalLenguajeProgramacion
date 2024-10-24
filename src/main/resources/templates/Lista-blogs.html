@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="layout :: content">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Blogs</title>
+</head>
+<body>
+    <h2>Lista de Blogs</h2>
+    
+    <form action="#" th:action="@{/blogs/buscar}" method="get">
+        <input type="text" name="titulo" placeholder="Buscar por título" />
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Categoría</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="blog : ${blogs}">
+                <td th:text="${blog.idBlog}"></td>
+                <td th:text="${blog.tituloBlog}"></td>
+                <td th:text="${blog.categoriaBlog}"></td>
+                <td>
+                    <a th:href="@{|/blogs/eliminar/${blog.idBlog}|}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a th:href="@{/blogs/reporte/pdf}" target="_blank">Exportar a PDF</a>
+</body>
+</html>

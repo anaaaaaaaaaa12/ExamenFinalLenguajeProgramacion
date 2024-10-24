@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Management</title>
+    <link rel="stylesheet" href="/css/styles.css" /> <!-- Tu hoja de estilos -->
+</head>
+<body>
+    <header>
+        <h1>Gestión de Blogs</h1>
+        <nav>
+            <a th:href="@{/blogs}">Lista de Blogs</a> |
+            <a th:href="@{/blogs/nuevo}">Crear Nuevo Blog</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div th:replace="${content}"></div>
+    </main>
+
+    <footer>
+        <p>Gestión de Blogs - Examen Final</p>
+    </footer>
+</body>
+</html>
